@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var products_controller_1 = require("../controllers/products.controller");
+var auth_middle_1 = require("../middlewares/auth.middle");
+var productsRouter = (0, express_1.Router)();
+productsRouter.get('/index', products_controller_1.indexController);
+productsRouter.get('/show', products_controller_1.showController);
+productsRouter.post('/create', auth_middle_1.authGuard, products_controller_1.createController);
+exports["default"] = productsRouter;
