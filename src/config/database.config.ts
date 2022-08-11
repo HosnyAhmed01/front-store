@@ -1,13 +1,15 @@
 import dotenv from 'dotenv'; 
+import { Pool } from 'pg';
 dotenv.config(); 
 
 const {
-    ENV,
+    ENV, 
     DB_NAME,
     DB_PORT,
     DB_HOST,
     DB_PASSWORD,
     DB_USER,
+    DB_NAME_TEST
 } = process.env; 
 
 
@@ -18,4 +20,5 @@ export default {
     password : DB_PASSWORD, 
     user : DB_USER, 
     host: DB_HOST, 
+    test : DB_NAME_TEST
 }
