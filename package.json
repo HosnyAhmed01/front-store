@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/server.js",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
-    "test": "set ENV=test && db-migrate --env test up && jasmine-ts && db-migrate --env test down "
+    "test": "SET ENV=test&& db-migrate --env test up && jasmine-ts && db-migrate --env test down "
   },
   "author": "Udacity",
   "license": "ISC",

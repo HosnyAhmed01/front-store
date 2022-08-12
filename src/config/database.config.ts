@@ -20,5 +20,5 @@ export default {
     password : DB_PASSWORD, 
     user : DB_USER, 
     host: DB_HOST, 
-    test : DB_NAME_TEST
+    test : String(DB_NAME_TEST)
 }
