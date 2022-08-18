@@ -48,6 +48,5 @@ class Usersmodel {
         conn.release(); 
         return result.rows[0];
     }
-    
 }
 export default Usersmodel;

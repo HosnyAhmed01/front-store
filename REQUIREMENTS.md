@@ -1,13 +1,17 @@
 ## correct RESTful routes for the required endpoints.
 
-1. http://localhost:3000/orders/current?user_id=1 {required token} get request
-2. http://localhost:3000/orders/complete?user_id=1 {required token} get request
-3. http://localhost:3000/auth/login get request
-4. http://localhost:3000/auth/register post request
-5. http://localhost:3000/auth/index {required token} get request
-6. http://localhost:3000/products/index get request
-7. http://localhost:3000/products/show get request
-8. http://localhost:3000/products/create { required token } post request
+1. http://localhost:3000/orders/current/1 {required token} get request
+2. http://localhost:3000/orders/complete/1 {required token} get request
+3. http://localhost:3000/orders/create {required token} post request 
+4. http://localhost:3000/orders/remove {required token} delete request 
+5. http://localhost:3000/orders/remove update {required token} PUT request 
+6. http://localhost:3000/orders/1/products {required token} post request 
+7. http://localhost:3000/auth/login get request
+8. http://localhost:3000/auth/register post request
+9. http://localhost:3000/auth/index {required token} get request
+10. http://localhost:3000/products/index get request
+11. http://localhost:3000/products/show get request
+12. http://localhost:3000/products/create { required token } post request
 
 ## database schema
 

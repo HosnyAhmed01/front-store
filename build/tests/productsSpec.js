@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const products_model_1 = __importDefault(require("../models/products.model"));
 const productmodel = new products_model_1.default;
-describe("### users model ", () => {
+describe("### products model ", () => {
     it("should be defiend ", () => __awaiter(void 0, void 0, void 0, function* () {
         const data = yield productmodel.index();
         expect(data).toBeDefined;
