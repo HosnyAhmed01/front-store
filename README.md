@@ -1,28 +1,28 @@
 ## how to start connection to database
 
-1. .env
-   ENV=dev
-   port=3000
-   DB_NAME=store_db
-   DB_NAME_TEST=store_db_test
-   DB_PORT=5000
-   DB_HOST=localhost
-   DB_PASSWORD=pass1234
-   DB_USER=hosny
-   PAPER=topsecrete 
-   ROUND=10
-   SECRET=topsecrete
+1. **.env**
+   1. ENV=dev
+   2. port=3000
+   3. DB_NAME=store_db
+   4. DB_NAME_TEST=store_db_test
+   5. DB_PORT=5000
+   6. DB_HOST=localhost
+   7. DB_PASSWORD=pass1234
+   8. DB_USER=hosny
+   9. PAPER=topsecrete 
+   10. ROUND=10
+   11. SECRET=topsecrete
 2. **create user**
-    ``sh
+    ``
     CREATE USER hosny WITH PASSWORD 'pass1234';  
     ``
 3. **create databases**
-   ``sh 
+   ``
    CREATE DATABASE store_db;
    CREATE DATABASE store_db_test;
    ``
 4. GRANT privileges to database
-   ``sh
+   ``
    GRANT ALL PRIVILEGES ON DATABASE store_db TO hosny;
    GRANT ALL PRIVILEGES ON DATABASE store_db_test TO hosny;
    ``
