@@ -19,7 +19,7 @@ class ordersModel {
     async updateOrder(stauts : string , id:number) : Promise<orders> {
         try {
             const conn = await client.connect(); 
-            const sql = `UPDATAE orders SET status=$1 WHERE id=$2 RETURNING *`;
+            const sql = `UPDATE orders SET status=$1 WHERE id=$2 RETURNING *`;
             const result = await conn.query(sql , [stauts , id]);
             conn.release();
             return result.rows[0];
@@ -30,7 +30,7 @@ class ordersModel {
     async removeOrder(id: number) : Promise<orders> {
         try {
             const conn = await client.connect(); 
-            const sql = `DELETE FROM order_products WHERE order_id =$1`;
+            const sql = `DELETE FROM order_products WHERE order_id =$1 RETURNING *`;
             const sql2= `DELETE FROM orders WHERE id=$1`;
             const result = await conn.query(sql , [id]); 
             const result2 = await conn.query(sql2 , [id]); 
@@ -55,7 +55,7 @@ class ordersModel {
         // connect to databaes 
         const conn = await client.connect(); 
         // write query 
-        const sql = `SELECT * FROM orders WHERE user_id = $1 AND stauts='complete'`;
+        const sql = `SELECT * FROM orders WHERE user_id = $1 AND status='complete'`;
         // run query 
         const result = await conn.query(sql , [user_id]);
         // release connection 

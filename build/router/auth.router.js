@@ -1,10 +1,10 @@
 "use strict";
-exports.__esModule = true;
-var express_1 = require("express");
-var auth_conteroller_1 = require("../controllers/auth.conteroller");
-var auth_middle_1 = require("../middlewares/auth.middle");
-var authRouter = (0, express_1.Router)();
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_conteroller_1 = require("../controllers/auth.conteroller");
+const auth_middle_1 = require("../middlewares/auth.middle");
+const authRouter = (0, express_1.Router)();
 authRouter.post('/register', auth_conteroller_1.registerController);
 authRouter.get('/login', auth_conteroller_1.loginController);
 authRouter.get('/index', auth_middle_1.authGuard, auth_conteroller_1.showAll);
-exports["default"] = authRouter;
+exports.default = authRouter;

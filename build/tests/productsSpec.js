@@ -19,8 +19,12 @@ describe("### products model ", () => {
         const data = yield productmodel.index();
         expect(data).toBeDefined;
     }));
-    it("should return array of users", () => __awaiter(void 0, void 0, void 0, function* () {
-        const data = yield productmodel.index();
-        expect(data).toEqual([]);
+    it("should be defiend", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield productmodel.create({ "name": "car", "price": 2000, "category": "cars" });
+        expect(data).toBeDefined();
+    }));
+    it("should return product", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield productmodel.show({ name: "car" });
+        expect(data).toBeDefined();
     }));
 });

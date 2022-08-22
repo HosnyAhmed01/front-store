@@ -52,7 +52,7 @@ class Usersmodel {
         // connect  to database
         const conn = await client.connect(); 
         // write sql query 
-        const sql = `DELETE FROM users WHERE id =$1`;
+        const sql = `DELETE FROM users WHERE id =$1 RETURNING *`;
         // run query
         const result = await conn.query(sql , [id]);
         // release connection 

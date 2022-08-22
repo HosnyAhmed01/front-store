@@ -8,12 +8,12 @@ describe("### products model " , ()=> {
         const data  = await productmodel.index();
         expect(data).toBeDefined; 
     })
-    it("should return array of users" , async() => {
-        const data = await productmodel.index(); 
-        expect(data).toEqual([]);
-    });
     it("should be defiend" , async() => {
         const data = await productmodel.create({"name" : "car" , "price" : 2000 , "category": "cars"}); 
-        expect(data).toBeDefined; 
+        expect(data).toBeDefined(); 
+    });
+    it("should return product" , async()=> {
+        const data = await productmodel.show({name : "car"});
+        expect(data).toBeDefined(); 
     });
 });

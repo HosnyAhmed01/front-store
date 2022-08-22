@@ -19,8 +19,20 @@ describe("### users model ", () => {
         const data = yield usermodel.index();
         expect(data).toBeDefined;
     }));
-    it("should return array of users", () => __awaiter(void 0, void 0, void 0, function* () {
-        const data = yield usermodel.index();
-        expect(data).toEqual([]);
+    it("should be defiend", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield usermodel.create({ "first_name": "hosny", "last_name": "ahmed", "password": "123" });
+        expect(data).toBeDefined;
+    }));
+    it("should show user by name ", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield usermodel.showByName("hosny");
+        expect(data).toBeDefined();
+    }));
+    it("should show user by id ", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield usermodel.show({ id: 1 });
+        expect(data).toBeDefined();
+    }));
+    it("should delete user", () => __awaiter(void 0, void 0, void 0, function* () {
+        const data = yield usermodel.delete(1);
+        expect(data).toBeDefined();
     }));
 });
