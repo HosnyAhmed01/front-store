@@ -16,12 +16,17 @@ const supertest_1 = __importDefault(require("supertest"));
 const server_1 = __importDefault(require("../server"));
 const request = (0, supertest_1.default)(server_1.default);
 describe("should test the endpoint of orders", () => {
-    it("should make a user", () => __awaiter(void 0, void 0, void 0, function* () {
-        const res = yield request
-            .post('/auth/register')
-            .send({ first_name: "hosny", last_name: "sawaby", password: "pass1234" });
-        expect(res.body.data.id).toBe(1);
-    }));
+    beforeAll(function auth() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield request
+                .post('/auth/register')
+                .send({ first_name: "hosny", last_name: "sawaby", password: "pass1234" });
+            // get the token 
+            const res = yield request.get('auth/login')
+                .send({ id: 1, password: "pass1234" });
+            return res.body.data.token;
+        });
+    });
     it("should return status of 200", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get('/orders/current/1');
         expect(response.status).toBe(401);
