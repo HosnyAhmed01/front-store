@@ -19,7 +19,7 @@ const orderModel = new orders_modle_1.default;
 const usermodel = new users_model_1.default;
 const productmodel = new products_model_1.default;
 describe("### orders model ", () => {
-    it("should throw an error ", () => __awaiter(void 0, void 0, void 0, function* () {
+    it("should be defiend ", () => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield usermodel.create({ "first_name": "hosny", "last_name": "ahmed", "password": "123" });
         const data = yield orderModel.createOrder('complete', user.id);
         expect(data).toBeDefined();

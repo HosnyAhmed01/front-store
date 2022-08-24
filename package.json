@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node build/server.js",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
-    "test": "SET ENV=test&& db-migrate --env test up && npx tsc &&jasmine  && db-migrate --env test down -c 5",
-    "db:down" : "db-migrate down -c 4"
+    "pretest": "db-migrate --env test up && npx tsc",
+    "test": "SET ENV=test&& jasmine",
+    "posttest": "db-migrate --env test down -c 5",
+    "db:down": "db-migrate down -c 4"
   },
   "author": "Udacity",
   "license": "ISC",
@@ -33,6 +35,7 @@
     "jasmine": "^4.3.0",
     "jasmine-spec-reporter": "^7.0.0",
     "jasmine-ts": "^0.4.0",
+    "supertest": "^6.2.4",
     "ts-node": "^10.9.1",
     "tsc-watch": "^4.2.9"
   }

@@ -1,14 +1,14 @@
 import OrderModel from '../models/orders.modle';
 import UserModel from '../models/users.model';
 import ProductModel from '../models/products.model';
-import { isAwaitExpression } from 'typescript';
+
 
 const orderModel = new OrderModel; 
 const usermodel = new UserModel; 
 const productmodel = new ProductModel; 
 
 describe("### orders model " , ()=> {
-    it("should throw an error " , async()=> {
+    it("should be defiend " , async()=> {
         const user = await usermodel.create({"first_name" : "hosny" , "last_name" : "ahmed" , "password" : "123"})
         const data  = await orderModel.createOrder( 'complete', user.id as number);
         expect(data).toBeDefined(); 

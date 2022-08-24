@@ -1,17 +1,9 @@
 ## how to start connection to database
 
 1. **.env**
-   1. ENV=dev
-   2. port=3000
-   3. DB_NAME=store_db
-   4. DB_NAME_TEST=store_db_test
-   5. DB_PORT=5000
-   6. DB_HOST=localhost
-   7. DB_PASSWORD=pass1234
-   8. DB_USER=hosny
-   9. PAPER=topsecrete 
-   10. ROUND=10
-   11. SECRET=topsecrete
+``
+Just copy the example.env file 
+``
 2. **create user**
     ``
     CREATE USER hosny WITH PASSWORD 'pass1234';  

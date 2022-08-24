@@ -40,5 +40,4 @@ export const showAll = async(_req : Request , res : Response) : Promise<void> =>
     } catch (err){
         throw new Error(`can not show this info`);
     }
-
 }

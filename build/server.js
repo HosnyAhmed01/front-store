@@ -15,3 +15,4 @@ app.use('/', index_1.default);
 app.listen(3000, function () {
     console.log(`starting app on: ${address}`);
 });
+exports.default = app;
