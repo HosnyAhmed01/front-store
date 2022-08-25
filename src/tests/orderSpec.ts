@@ -17,21 +17,21 @@ describe("### orders model " , ()=> {
        const data = await orderModel.currentOrder(1);
        expect(data).toBeDefined(); 
     });
-    it("should get current orders" , async()=> {
+    it("should get completed orders" , async()=> {
        const data = await orderModel.completedOrder(1);
        expect(data).toBeDefined(); 
     });
     it("should update order" , async()=> {
-        const data = await orderModel.updateOrder('open' , 1); 
+        const data = await orderModel.updateOrder('open' , 2); 
         expect(data).toBeDefined();
     });
     it("should add product to an order" , async() => {
         const product = await productmodel.create({name : "car" , price : 2000 , category : "cars"});
-        const addProduct = await orderModel.addProduct(20 , 1 , product.id as number); 
+        const addProduct = await orderModel.addProduct(20 , 2, product.id as number); 
         expect(addProduct).toBeDefined(); 
     }); 
     it("should remove order" , async() => {
-        const delteOrder = await orderModel.removeOrder(1); 
+        const delteOrder = await orderModel.removeOrder(2); 
         expect(delteOrder).toBeDefined();
     });
 });

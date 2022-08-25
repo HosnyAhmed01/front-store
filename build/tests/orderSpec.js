@@ -28,21 +28,21 @@ describe("### orders model ", () => {
         const data = yield orderModel.currentOrder(1);
         expect(data).toBeDefined();
     }));
-    it("should get current orders", () => __awaiter(void 0, void 0, void 0, function* () {
+    it("should get completed orders", () => __awaiter(void 0, void 0, void 0, function* () {
         const data = yield orderModel.completedOrder(1);
         expect(data).toBeDefined();
     }));
     it("should update order", () => __awaiter(void 0, void 0, void 0, function* () {
-        const data = yield orderModel.updateOrder('open', 1);
+        const data = yield orderModel.updateOrder('open', 2);
         expect(data).toBeDefined();
     }));
     it("should add product to an order", () => __awaiter(void 0, void 0, void 0, function* () {
         const product = yield productmodel.create({ name: "car", price: 2000, category: "cars" });
-        const addProduct = yield orderModel.addProduct(20, 1, product.id);
+        const addProduct = yield orderModel.addProduct(20, 2, product.id);
         expect(addProduct).toBeDefined();
     }));
     it("should remove order", () => __awaiter(void 0, void 0, void 0, function* () {
-        const delteOrder = yield orderModel.removeOrder(1);
+        const delteOrder = yield orderModel.removeOrder(2);
         expect(delteOrder).toBeDefined();
     }));
 });

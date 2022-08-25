@@ -22,12 +22,12 @@ const registerController = (req, res) => __awaiter(void 0, void 0, void 0, funct
         const { first_name, last_name, password } = req.body;
         const data = yield (0, auth_service_1.registerService)({ first_name, last_name, password });
         res.json({
-            messege: "user create",
+            messege: "user created",
             data: data
         });
     }
     catch (err) {
-        throw new Error(`can not create user`);
+        throw new Error(err);
     }
 });
 exports.registerController = registerController;

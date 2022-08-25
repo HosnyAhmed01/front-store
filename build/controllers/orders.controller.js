@@ -21,7 +21,7 @@ const createOrderController = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const user_id = req.body.user_id;
         const data = yield ordersModel.createOrder(orderStatus, user_id);
         res.json({
-            createdOrder: data
+            data: data
         });
     }
     catch (err) {
@@ -35,7 +35,7 @@ const updateOrderController = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const id = req.body.id;
         const data = yield ordersModel.updateOrder(orderStatus, id);
         res.json({
-            updatedOrder: data
+            data: data
         });
     }
     catch (err) {
@@ -48,7 +48,7 @@ const removeOrderController = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const id = req.body.id;
         const data = yield ordersModel.removeOrder(id);
         res.json({
-            createdOrder: data
+            data: data
         });
     }
     catch (err) {
@@ -61,7 +61,7 @@ const currentOrderController = (req, res) => __awaiter(void 0, void 0, void 0, f
         const { user_id } = req.params;
         const data = yield ordersModel.currentOrder(Number(user_id));
         res.json({
-            currentOrders: data
+            data: data
         });
     }
     catch (err) {
@@ -74,7 +74,7 @@ const completedOrderController = (req, res) => __awaiter(void 0, void 0, void 0,
         const { user_id } = req.params;
         const data = yield ordersModel.completedOrder(Number(user_id));
         res.json({
-            completedorders: data
+            data: data
         });
     }
     catch (err) {

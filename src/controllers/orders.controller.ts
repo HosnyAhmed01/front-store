@@ -9,7 +9,7 @@ export const createOrderController = async (req : Request , res : Response) : Pr
         const user_id = req.body.user_id; 
         const data = await ordersModel.createOrder(orderStatus , user_id);
         res.json({
-            createdOrder : data
+            data : data
         });
     } catch (err) {
         throw new Error(`sorry can not created order`);
@@ -22,7 +22,7 @@ export const updateOrderController = async (req : Request , res : Response) : Pr
         const id = req.body.id; 
         const data = await ordersModel.updateOrder(orderStatus , id);
         res.json({
-            updatedOrder : data
+            data : data
         });
     } catch (err) {
         throw new Error(`sorry can not update order`);
@@ -33,7 +33,7 @@ export const removeOrderController = async (req : Request , res : Response) : Pr
         const id = req.body.id; 
         const data = await ordersModel.removeOrder(id);
         res.json({
-            createdOrder : data
+            data : data
         });
     } catch (err) {
         throw new Error(`sorry can not created order`);
@@ -45,7 +45,7 @@ export const currentOrderController = async (req : Request , res : Response) : P
         const { user_id } = req.params;
         const data = await ordersModel.currentOrder(Number(user_id));
         res.json({
-            currentOrders : data
+            data : data
         });
     } catch (err) {
         throw new Error(`sorry can not get current order`);
@@ -56,7 +56,7 @@ export const completedOrderController = async (req : Request , res : Response) :
     const {user_id} = req.params;
     const data = await ordersModel.completedOrder(Number(user_id));
     res.json({
-        completedorders : data
+        data : data
     });
    }catch (err) {
     throw new Error(`sorry can not get current order`);

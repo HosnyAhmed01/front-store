@@ -11,11 +11,11 @@ export const registerController = async(req : Request ,res : Response) : Promise
         const { first_name , last_name, password } = req.body;
         const data = await registerService({ first_name , last_name, password });
         res.json({
-            messege: "user create",
+            messege: "user created",
             data : data
         })
     } catch (err) {
-        throw new Error(`can not create user`);
+        throw new Error(err as string);
     }
 }
 
